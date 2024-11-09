@@ -51,3 +51,54 @@
 //     item.textContent = index + 1;
 //   })
 // }
+
+
+/**
+ * П'яте завдання 
+ * Вводимо число у input із id="test" число. 
+   При кліку на кнопку у input із id = "result" повинен виводити квадрта цього числа
+   Якщо ввели не число, показувати alert із текстом "Ввели не число" -->
+
+    <input type="text" value="" placeholder="Введіть число" id="test" />
+    <input id="result" value="Результат" disabled />
+    <button>Click me</button>
+ */
+
+// const inputTest = document.querySelector("#test");
+// const inputResult = document.querySelector("#result");
+// const btn = document.querySelector("button");
+
+// btn.addEventListener("click", squareNumber);
+
+// function squareNumber() {
+//     if (isNaN(inputTest.value)) {
+//         alert(`Ввели не число: ${inputTest.value}`);
+//         return;
+//     }    
+//     inputResult.value = inputTest.value ** 2;            
+// }
+
+/**
+ * Шосте завдання 
+ *   Напишіть інтерфейс, щоб створити список.
+    Для кожного пункту:
+    Запитуйте вміст у користувача за допомогою prompt. Створюйте пункт і додайте його до UL.
+    Процес припиняється, коли користувач натискає ESC.
+    Усі елементи мають створюватися динамічно. -->
+
+    <!-- <h1>Створення списку</h1> -->
+ */
+
+// const title = document.querySelector("h1");
+
+// let userInput = prompt("Напишіть пункт, який добавити в список");
+// const list = document.createElement("ul");
+// do {    
+//     if (userInput&&userInput.trim()!=="") {        
+//         const item = document.createElement("li");        
+//         item.textContent = userInput;        
+//         list.appendChild(item);        
+//     }    
+//     userInput = prompt("Напишіть новий пункт");
+// } while (userInput);
+// title.appendChild(list);
