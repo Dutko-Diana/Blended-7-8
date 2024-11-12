@@ -93,12 +93,33 @@
 
 // let userInput = prompt("Напишіть пункт, який добавити в список");
 // const list = document.createElement("ul");
-// do {    
-//     if (userInput&&userInput.trim()!=="") {        
-//         const item = document.createElement("li");        
-//         item.textContent = userInput;        
-//         list.appendChild(item);        
-//     }    
+// do {
+//     if (userInput&&userInput.trim()!=="") {
+//         const item = document.createElement("li");
+//         item.textContent = userInput;
+//         list.appendChild(item);
+//     }
 //     userInput = prompt("Напишіть новий пункт");
 // } while (userInput);
 // title.appendChild(list);
+
+
+// task-7
+
+// <!-- Сьоме завдання
+//     Додайте усім посиланням подію - за наведенням на посилання в атрибут title запишеться її текст -->
+
+//     <!-- <a href="#" title="">Перше посилання</a>
+//     <a href="#" title="">Друге посилання</a>
+//     <a href="#" title="">Третє посилання</a> -->
+
+const links = document.querySelector("div");
+
+links.addEventListener("mouseover", addTitle) 
+
+function addTitle (event) {
+   if (event.target.nodeName !== "A") {
+      return;
+   }
+   event.target.title = event.target.textContent;
+}
