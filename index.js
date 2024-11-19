@@ -113,13 +113,185 @@
 //     <a href="#" title="">Друге посилання</a>
 //     <a href="#" title="">Третє посилання</a> -->
 
-const links = document.querySelector("div");
+// const links = document.querySelector("div");
 
-links.addEventListener("mouseover", addTitle) 
+// links.addEventListener("mouseover", addTitle) 
 
-function addTitle (event) {
-   if (event.target.nodeName !== "A") {
-      return;
-   }
-   event.target.title = event.target.textContent;
-}
+// function addTitle (event) {
+//    if (event.target.nodeName !== "A") {
+//       return;
+//    }
+//    event.target.title = event.target.textContent;
+// }
+
+
+
+/*
+   Восьме завдання 
+   Дані span. По першому натисканні на кожен span він фарбується червоним фоном, 
+   по другому фарбується назад і так далі кожен клік відбувається чергування фону. 
+   Зробіть так, щоб було дві функції: одна фарбує в червоний колір, 
+   інша в зелений і вони змінювали одна одну через removeEventListener.     
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+*/
+
+// const spanEl = document.querySelectorAll("span");
+// spanEl.forEach((elem) => {   
+//    elem.addEventListener("click", paintOverRed);  
+// });
+// function paintOverRed(event) {      
+//    event.target.style.background = "red";    
+//    event.target.removeEventListener("click", paintOverRed);             
+//    event.target.addEventListener("click", paintOverGreen);   
+// }
+// function paintOverGreen(event) {   
+//    event.target.style.background = "green";   
+//    event.target.removeEventListener("click", paintOverGreen);             
+//    event.target.addEventListener("click", paintOverRed);   
+// }
+
+/*Дев'яте завдання 
+
+  Даний ol, у ньому декілька li. Під ol зробіть кнопку, 
+  за натисканням на яку до кінця ul буде додаватися новий li з текстом 'пункт'. 
+  Зробіть так, щоб при натисканні на кожен li, йому в кінець додавався '!'. 
+  Це мусить працювати і для знову доданих li. 
+  Завдання вирішіть за допомогою делегування (тобто подія має бути навішана на ol).  -->
+    <!--     
+      <ol id="ol">
+        <li>пункт</li>
+        <li>пункт</li>
+        <li>пункт</li>
+      </ol>
+      
+      <button id="btn">Додати li</button> -->
+ */
+
+// const btnEl = document.querySelector(`#btn`);
+// const listEl = document.querySelector(`#ol`);
+
+// btnEl.addEventListener(`click`, addItem);
+// listEl.addEventListener(`click`, UpdateTextItem);
+
+// function addItem() {
+//    const itemEl = document.createElement("li"); 
+//    itemEl.textContent = "пункт";
+//    listEl.appendChild(itemEl);
+// }
+
+// function UpdateTextItem(evt) {
+//    evt.target.textContent += `!`;
+// }
+
+
+/**
+ * <!-- Десяте завдання  
+    Реалізуйте поведінку поведінку кнопок натискання на них 
+      (одна з них блокує інпут за допомогою атрибута disabled, а інша розблокує) -->
+    <!-- <button class="lock">Заблокувати</button>
+      <button class="unlock">Розблокувати</button>
+      <input type="text" id="input">     -->
+ */
+
+// const btnLockEl = document.querySelector(`.lock`);
+// const btnUnlockEl = document.querySelector(`.unlock`);
+// const inputEl = document.querySelector(`#input`);
+
+// btnLockEl.addEventListener(`click`, inputDisable);
+// btnUnlockEl.addEventListener(`click`, inputEnable);
+
+// function inputDisable() {
+//    inputEl.disabled = "disabled";
+// }
+
+// function inputEnable() {
+//    inputEl.disabled = "";
+// }
+
+
+/**
+ * <!-- Одинадцяте завдання 
+    В інпути вводимо число, при натисканні на кнопку у span із id = "result" 
+    виводимо результат додавання двох чисел.  -->
+
+    <!-- <input type="text" value="" id="input1">
+	+
+	<input type="text" value="" id="input2">
+	=
+	<span id = "result">?</span>
+	<br>
+	<br>
+	<button id="btn">Введіть, що додати</button> -->   
+ */
+
+// const inputOneEl = document.querySelector(`#input1`);
+// const inputTwoEl = document.querySelector(`#input2`);
+// const resEl = document.querySelector(`#result`);
+// const btnEl = document.querySelector(`#btn`);
+
+// btnEl.addEventListener(`click`, sum);
+
+// function sum() {      
+//    resEl.textContent = (+inputOneEl.value + +inputTwoEl.value);
+// }
+   
+
+/**
+ * <!-- Дванадцяте завдання 
+    
+    Додайте всім інпутам наступну подію - втрата фокусу кожен інпут виводить
+    своє value в абзац з id="test".  -->
+
+    <!-- <input type="text" value="1">
+    <input type="text" value="2">
+    <input type="text" value="3">
+    <p id="test"></p> -->
+ */
+// const textEl = document.querySelector(`#test`);
+// const inputList = document.querySelectorAll(`input`);
+// inputList.forEach(evt => evt.addEventListener(`blur`, updateTextContentTest));
+
+// function updateTextContentTest(evt) {
+//    textEl.textContent += evt.target.value;
+// }
+
+
+/**
+ * <!-- Тринадцяте завдання 
+    У інпут вводимо літеру або число. У span із id="show" виводимо код клавіші, яку натиснули -->
+    <!-- 
+  <input placeholder="Введіть текст">
+	<br><br>
+	<div>Код клавіші, яку натиснули: <span id="show">?</span></div> -->
+ */
+// const showEl = document.querySelector(`#show`);
+// const inputEl = document.querySelector(`input`);
+
+// inputEl.addEventListener(`keypress`, ShowKeyPress);
+
+// function ShowKeyPress(e) {
+//    showEl.textContent = `${e.type} key=${e.key} code=${e.code} ${e.shiftKey ? ' shiftKey' : ''} ${e.ctrlKey ? ' ctrlKey' : ''} ${e.altKey ? ' altKey' : ''} ${e.metaKey ? ' metaKey' : ''} ${e.repeat ? ' (repeat)' : ''}`;
+// }
+
+
+
+/**
+ * <!-- Чотирнадцяте завдання 
+    У інпут вводимо літеру або число. У span із id="show" виводимо значення клавіші, яку натиснули
+    (наприклад, натиснули t і має отримати у span літеру t) -->
+
+    <!-- <input on placeholder="Введіть текст">
+      <br><br>
+      <div>Наатиснуто клавішу: <span id="show">?</span></div> -->
+ */
+
+// const inputEl = document.querySelector(`input`);
+// const showEl = document.querySelector(`#show`);
+
+// inputEl.addEventListener(`keypress`, showKey);
+
+// function showKey(e) {
+//    showEl.textContent = e.key;
+// }
